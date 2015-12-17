@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="jumbotron text-center">
+    <h2>The Game of Shells</h2>
+    <p class="lead">
+      <div id="board">
+        <div class="inline-block">
+          <img ng-repeat="cup in game.cups" choose-cup ball="game.ball" cup="cup" playing="game.playing" class="cup" ng-src="assets/images/cup.gif" alt="{{ cup.id }}" ng-style="{'left': cup.left+'px'}"><br>
+          <img class="ball" ng-show="!game.playing" ng-style="{'left': game.ball.left+'px'}" ng-src="assets/images/ball.png" alt="Ball">
+        </div>
+      </div>
+    </p>
+    <p>
+      <button ng-disabled="game.playing" type="button" class="btn btn-lg btn-default" reset playing="game.playing" cups="game.cups" ball="game.ball">Reset</button>
+      <button ng-disabled="game.playing" type="button" class="btn btn-lg btn-success" start playing="game.playing" cups="game.cups">Start</button>
+    </p>
+  </div>
+</div>
+
